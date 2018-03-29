@@ -42,7 +42,8 @@ window.onload = function () {
             }
             var displayLetters = letters.join(', ');
             var html =
-                "<p>You chose: " + displayLetters + "</p>" +
+                "<p>You chose: </p>" + 
+                "<p>" + displayLetters + "</p>" +
                 "<p>wins: " + wins + "</p>" +
                 "<p>losses: " + losses + "</p>"
             document.querySelector("#game").innerHTML = html;

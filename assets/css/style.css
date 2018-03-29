@@ -1,3 +1,69 @@
 body {
-    color: black;
+    color: white;
+}
+
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(polina.jpg) no-repeat;
+    background-size: cover; 
+}
+
+.container-fluid {
+    clear: both;
+}
+
+.jumbotron {
+    background-color: transparent;
+    font-family: 'Bungee Inline', cursive;
+}
+
+#jumbo {
+    color: #0DA592;
+    text-align:center;
+    background-size:cover;
+    background-position:center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 58px;s
+}
+
+#directions {
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 32px;
+    color: #F56521;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#playGame {
+    position: relative;
+    text-align: center;
+}
+
+#crystalimg {
+    text-align: center;
+}
+
+#game {
+    position: absolute;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 26px;
+    text-align: center;
+    right: 0px;
+    left: 0px;
+    margin-top: 115px;
 }
