@@ -1,66 +1,52 @@
 window.onload = function () {
 
-// Creates an array that lists out all of the options (alphabet).
-var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    // Creating variables to hold the number of wins and losses. They start at 0.
+    var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    var wins = 0;
+    var losses = 0;
+    var guesses = 9;
+ 
+    var letters = []; //array to push user choices to
 
+    // Shows available guesses
+    var showGuesses = document.getElementById('myGuesses');
 
-// Creating variables to hold the number of wins, losses, and ties. They start at 0.
-var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var wins = 0;
-var losses = 0;
-var guessesLeft = 9;
-var guessedLetters = [ ];
+    // This function is run whenever the user presses a key.
+    document.onkeydown = function(event) {
 
-//alphabet buttons
-var buttons = function () {
-    myButtons = document.getElementById('buttons');
-    letters = document.createElement('ul');
+        // Accept user guess
+        var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+        
+        console.log(letters);
+        // Randomly chooses a choice from the options array. This is the Computer's guess.
+        var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
 
-    for (var i = 0; i < alphabet.length; i++) {
-        letters.id = 'alphabet';
-        list = document.createElement('li');
-        list.id = 'letter';
-        list.innerHTML = alphabet[i];
-        check();
-        myButtons.appendChild(letters);
-        letters.appendChild(list);
-    }
-}
-
-// This function is run whenever the user presses a key.
-document.onkeyup = function (event) {
-
-    // Determines which key was pressed.
-    var userGuess = event.key;
-
-    // Randomly chooses a choice from the options array. This is the Computer's guess.
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
-    // This logic determines the outcome of the game (win/loss/tie), and increments the appropriate number
-    if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGuess === "d") || (userGuess === "e") ||
-        (userGuess === "f") || (userGuess === "g") || (userGuess === "h") || (userGuess === "i") || (userGuess === "j") ||
-        (userGuess === "k") || (userGuess === "l") || (userGuess === "m") || (userGuess === "n") || (userGuess === "o") ||
-        (userGuess === "p") || (userGuess === "q") || (userGuess === "r") || (userGuess === "s") || (userGuess === "t") ||
-        (userGuess === "u") || (userGuess === "v") || (userGuess === "w") || (userGuess === "x") || (userGuess === "y") ||
-        (userGuess === "z")) {
-
-        if ((userGuess === computerGuess)) {
-            wins++;
-        } else {
-            guessesLeft--;
-        }
-
-        // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/guesses.
-        var html =
-            "<p>You chose: " + userGuess + "</p>" +
-            "<p>The computer chose: " + computerGuess + "</p>" +
-            "<p>Wins: " + wins + "</p>" +
-            "<p>Losses: " + losses + "</p>" +
-            "<p>Guesses Left: " + guessesLeft + "</p>" +
-            "<p>Your Guesses so far: " + guessedLetters + "</p>";
-
-        // Set the inner HTML contents of the #game div to our html string
-        document.querySelector("#game").innerHTML = html;
+        //This logic determines the outcome of the game (win/loss), and increments the appropriate number    
+        if (/^[a-zA-Z]+$/.test(userGuess) && letters.indexOf(userGuess) == -1) {
+            letters.push(userGuess);
+            if (userGuess === computerGuess) {
+                wins++;
+                alert('Way to go! You Won!');
+                guesses = 9; //resets guesses to 9
+                letters.length = 0; //removes previously guessed letters
+            }
+            else if (guesses === 0) {
+                losses++;
+                alert('You lost this time!  Try again!');
+                guesses = 9;
+                letters.length = 0;
+                console.log(showGuesses);
+            }
+            else if (userGuess !== computerGuess) {
+                guesses--; //subtracting from guesses left
+            }
+            var displayLetters = letters.join(', ');
+            var html =
+                "<p>You chose: " + displayLetters + "</p>" +
+                "<p>wins: " + wins + "</p>" +
+                "<p>losses: " + losses + "</p>"
+            document.querySelector("#game").innerHTML = html;
+        }   
+        
     }
 };
-}
