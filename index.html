@@ -14,8 +14,8 @@
         crossorigin="anonymous">
     
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script> -->
 
     <!-- JS cdn-->
     <script type="text/javascript" src="assets/javascript/game.js"></script>
@@ -39,12 +39,13 @@
 
             <!--Bootstrap Jumbotron start-->
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-sm-12">
                     <div class="jumbotron" id="jumbo">
                         <h2>The Psychic Game</h2>
                         <p id="directions"> Guess what letter I'm thinking of! Press any letter to begin.</p>
                         <p>
-                            <a class="btn btn-primary btn-large" href="#">Play Again</a>
+                            <span id="playAgain" href="index.html">Play Again</span>
+                            <!-- <a class="btn btn-primary btn-large" href="#">Play Again</a> -->
                         </p>
                     </div>
                 </div>
@@ -53,19 +54,16 @@
 
             <!--Directions start-->
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-sm-12">
                 </div>
             </div>
             <!--Directions end-->
 
             <div class="row">
-                <div class="col-md-6" id="game">
-                </div>
-                <div class="col-md-6">
+                <div class="col-sm-12">
                     <div id="playGame">
-                        <!-- <p id="game"></p> -->
                         <img alt="crystal ball" id="crystalimg" src="assets/images/crystalball.png"/>
-                        <p id="game"></p>
+                        <p class="carousel-caption" id="game"></p>
                     </div>
                 </div>
             </div>

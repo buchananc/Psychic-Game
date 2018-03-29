@@ -15,7 +15,6 @@ video {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url(polina.jpg) no-repeat;
     background-size: cover; 
 }
 
@@ -29,41 +28,57 @@ video {
 }
 
 #jumbo {
-    color: #0DA592;
+    color: #70C9C7;
     text-align:center;
     background-size:cover;
     background-position:center;
-    padding-top: 10px;
+    padding-top: 0px;
     padding-bottom: 10px;
 }
 
 h2 {
-    font-size: 58px;s
+    font-size: 58px;
+    margin-bottom: 2px;
 }
 
 #directions {
     font-family: 'Anonymous Pro', monospace;
     font-size: 32px;
-    color: #F56521;
+    color: #E95538;
     margin-left: 50px;
     margin-right: 50px;
+    padding-bottom: 10px;
+}
+
+#playAgain {
+    background-color: #F69340;
+    color: white;
+    padding: 20px;
+    border-radius: 44px;
+    border: solid 5px #70C9C7;
 }
 
 #playGame {
     position: relative;
     text-align: center;
+    top: 0;
+    bottom: 0;
+    height: 500px;
 }
 
 #crystalimg {
     text-align: center;
+    position: relative;
+    height: 450px;
 }
 
 #game {
     position: absolute;
+    margin-top: 75px;
+    top: 0px;
     font-family: 'Anonymous Pro', monospace;
     font-size: 26px;
     text-align: center;
     right: 0px;
     left: 0px;
-    margin-top: 115px;
 }
