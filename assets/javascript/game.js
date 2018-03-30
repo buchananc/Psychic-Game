@@ -30,10 +30,10 @@ window.onload = function () {
             
             if (userGuess === computerGuess) {
                 wins++;
+                winnerAudio.play();
                 alert('Way to go! You Won!');
                 guesses = 9; //resets guesses to 9
                 letters.length = 0; //removes previously guessed letters
-                winnerAudio.play();
             }
             else if (guesses === 0) {
                 losses++;
