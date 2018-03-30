@@ -17,7 +17,9 @@ window.onload = function () {
         // Accept user guess
         var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
         
-        console.log(letters);
+        //play sound effect when player gets a win
+        var audio = new Audio('assets/images/588688352.mp4');
+
         // Randomly chooses a choice from the options array. This is the Computer's guess.
         var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
 
@@ -29,13 +31,13 @@ window.onload = function () {
                 alert('Way to go! You Won!');
                 guesses = 9; //resets guesses to 9
                 letters.length = 0; //removes previously guessed letters
+                audio.play();
             }
             else if (guesses === 0) {
                 losses++;
                 alert('You lost this time!  Try again!');
                 guesses = 9;
                 letters.length = 0;
-                console.log(showGuesses);
             }
             else if (userGuess !== computerGuess) {
                 guesses--; //subtracting from guesses left

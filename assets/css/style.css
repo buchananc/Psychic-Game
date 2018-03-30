@@ -56,6 +56,13 @@ h2 {
     padding: 15px;
     border-radius: 44px;
     border: solid 5px #70C9C7;
+    width: 180px;
+    text-align: center;
+}
+
+#playAgain:hover { 
+    background-color: #E95538;
+    cursor: pointer;
 }
 
 #playGame {
