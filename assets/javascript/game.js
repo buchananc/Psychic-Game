@@ -35,20 +35,21 @@ window.onload = function () {
             if (userGuess === computerGuess) {
                 wins++;
                 winnerAudio.play();
-                alert('Way to go! You Won!');
                 guesses = 9; //resets guesses to 9
                 letters.length = 0; //removes previously guessed letters
+                alert('Way to go! You Won!');
             }
-            else if (guesses === 0) {
+            else if (guesses === 1) {
                 losses++;
                 loserAudio.play();
-                alert('You lost this time!  Try again!');
                 guesses = 9;
                 letters.length = 0;
+                alert('You lost this time!  Try again!');
             }
             else if (userGuess !== computerGuess) {
                 guesses--; //subtracting from guesses left
             }
+
             var displayLetters = letters.join(', ');
             var html =
                 "<p>You chose: </p>" + 
