@@ -21,6 +21,10 @@ window.onload = function () {
         var winnerAudio = document.createElement('audio');
             winnerAudio.src = 'assets/images/twinkle.mp3';
 
+        //play sound effect when player loses a round
+        var loserAudio = document.createElement('audio');
+        loserAudio.src = 'assets/images/blop.mp3';
+
         // Randomly chooses a choice from the options array. This is the Computer's guess.
         var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
 
@@ -37,6 +41,7 @@ window.onload = function () {
             }
             else if (guesses === 0) {
                 losses++;
+                loserAudio.play();
                 alert('You lost this time!  Try again!');
                 guesses = 9;
                 letters.length = 0;
@@ -49,7 +54,8 @@ window.onload = function () {
                 "<p>You chose: </p>" + 
                 "<p>" + displayLetters + "</p>" +
                 "<p>wins: " + wins + "</p>" +
-                "<p>losses: " + losses + "</p>"
+                "<p>losses: " + losses + "</p>" +
+                "<p>guesses left: " + guesses + "</p>"
             document.querySelector("#game").innerHTML = html;
         }   
         
