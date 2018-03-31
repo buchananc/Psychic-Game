@@ -1,8 +1,6 @@
 # Psychic Game
 This repository was created for UNCC's Coding Bootcamp homework assignment #3 with a focus on pseudocoding, JavaScript, jQuery, HTML, and CSS.  
 
-https://buchananc.github.io/PsychicGame/
-
 ## About
 This app runs in the browser, and features dynamically updated HTML and CSS powered by JavaScript code. Click [here](https://buchananc.github.io/PsychicGame/) to play!
 
